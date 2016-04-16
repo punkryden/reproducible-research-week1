@@ -1,6 +1,6 @@
 ---
 title: "reproducible-research-1"
-author: "Nicolas Clément"
+author: "Nicolas ClÃ©ment"
 date: "April 16, 2016"
 output: html_document
 ---
@@ -177,7 +177,13 @@ activity_2$workingday[weekdays(as.Date(activity_2$date), abb=T) %in% c("Sat","Su
 
 ```r
 mean_steps_interval_by_workingday <- aggregate(steps ~ interval + workingday, data=activity_2, mean)
-xyplot(steps ~ interval | workingday, data=mean_steps_interval_by_workingday, type="l", grid=T, layout=c(1,2), ylab="Number of steps", xlab="Interval [minutes]", main="Time-series of the average number of steps\n per intervals by workingday or not")
+xyplot(steps ~ interval | workingday, 
+       data=mean_steps_interval_by_workingday, 
+       type="l", grid=T, 
+       layout=c(1,2), 
+       ylab="Number of steps", 
+       xlab="Interval [minutes]", 
+       main="Time-series of the average number of steps\n per intervals by workingday or not")
 ```
 
 ![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
